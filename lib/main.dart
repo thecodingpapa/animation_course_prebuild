@@ -1,6 +1,9 @@
 import 'package:animation_course_prebuild/scrollData.dart';
 import 'package:flutter/material.dart';
 
+import 'scrollVideoPlayer.dart';
+import 'testAnim.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -46,11 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
         scrollData.size = _size!;
         scrollHeight = scrollData.percentageToHeight(2.5);
         return Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.black,
           body: Center(
             child: Stack(
               fit: StackFit.expand,
               children: [
+                //Animation Component goes in here
+                const TestAnimation(),
+                const ScrollVideoPlayer(),
                 SingleChildScrollView(
                   controller: _scrollController,
                   child: Column(
